@@ -28,13 +28,16 @@ export const metadata: Metadata = {
     "Rust",
     "Anchor",
   ],
-  metadataBase: new URL("https://nchunggabriel.com"),
+  metadataBase: new URL("https://gabii2178.github.io"),
+  alternates: {
+    canonical: "https://gabii2178.github.io",
+  },
   openGraph: {
     title: "Nchung Gabriel | Backend Engineer, Automation Engineer & Business Strategist",
     description:
       "Building scalable software, intelligent automations, and business solutions that create real impact.",
     type: "website",
-    url: "https://nchunggabriel.com",
+    url: "https://gabii2178.github.io",
     siteName: "Nchung Gabriel",
     images: [{ url: "/images/gabi1.png", width: 1200, height: 1600, alt: "Nchung Gabriel" }],
   },
@@ -44,6 +47,8 @@ export const metadata: Metadata = {
     description:
       "Building scalable software, intelligent automations, and business solutions that create real impact.",
     images: ["/images/gabi1.png"],
+    site: "@gabii2178",
+    creator: "@gabii2178",
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
@@ -63,7 +68,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </body>

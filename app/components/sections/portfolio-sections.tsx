@@ -13,7 +13,6 @@ import {
     Globe,
     Mail,
     MapPin,
-    MessageCircle,
     Phone,
     Play,
     Rocket,
@@ -160,12 +159,12 @@ const socialLinks = [
 ];
 
 function TypingHeadline() {
-    const words = ["Full Stack Software Engineer", "Automation Engineer", "Business Strategist", "Future Solana Developer"];
     const [currentWord, setCurrentWord] = useState(0);
     const [displayed, setDisplayed] = useState("");
     const [deleting, setDeleting] = useState(false);
 
     useEffect(() => {
+        const words = ["Full Stack Software Engineer", "Automation Engineer", "Business Strategist", "Future Solana Developer"];
         const timeout = window.setTimeout(() => {
             const word = words[currentWord];
             if (!deleting) {
@@ -185,7 +184,7 @@ function TypingHeadline() {
         }, deleting ? 60 : 100);
 
         return () => window.clearTimeout(timeout);
-    }, [currentWord, deleting, displayed, words]);
+    }, [currentWord, deleting, displayed]);
 
     return <span className="block text-transparent bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text">{displayed}|</span>;
 }
